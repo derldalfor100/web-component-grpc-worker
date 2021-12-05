@@ -42,7 +42,7 @@ npm i ts-protoc-gen --save-dev
 
 npm i google-protobuf @types/google-protobuf @improbable-eng/grpc-web --save-dev
 
-create a valid proto file in src/proto/definitions
+create a valid proto file in projects/src/proto/definitions
 
 protoc --plugin="protoc-gen-ts="$(pwd)"\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:./projects/app/src/proto/services" --ts_out="service=grpc-web:./projects/app/src/proto/services" -I ./projects/app/src/proto/definitions projects/app/src/proto/definitions/*.proto
 
