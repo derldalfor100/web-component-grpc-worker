@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## DIY
+
+Run `ng new web-component-grpc-worker --createApplication=false --interactive=false`
+
+cd web-component-grpc-worker
+
+code .
+
+ng g application app --style=scss --routing=false
+
+ng generate web-worker app
+
+npm i ts-protoc-gen --save-dev
+
+npm i google-protobuf @types/google-protobuf @improbable-eng/grpc-web --save-dev
+
+create a valid proto file in src/proto/definitions
+
+protoc --plugin="protoc-gen-ts="$(pwd)"\node_modules\.bin\protoc-gen-ts.cmd" --js_out="import_style=commonjs,binary:./projects/app/src/proto/services" --ts_out="service=grpc-web:./projects/app/src/proto/services" -I ./projects/app/src/proto/definitions projects/app/src/proto/definitions/*.proto
+
+ng g component greeter
+
+ng add @angular/elements
+
+ng add ngx-build-plus@12.2.0
+
+ng serve -o
+
+ng build --output-hashing none --single-bundle true
