@@ -54,4 +54,4 @@ ng add ngx-build-plus@12.2.0
 
 ng serve -o
 
-ng build --output-hashing none --single-bundle true
+ng build --output-hashing none --single-bundle
