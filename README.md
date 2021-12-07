@@ -52,6 +52,10 @@ ng add @angular/elements
 
 ng add ngx-build-plus@12.2.0
 
+npm i comlink
+
+ng generate web-worker fetch
+
 ng serve -o
 
 ng build --output-hashing none --single-bundle
